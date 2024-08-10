@@ -1,10 +1,10 @@
 import CardsContainer from '../components/CardsContainer';
-import NavbarComponent from '../components/NavbarComponent';
+import Navbar from '../components/Navbar';
 
 const HomePage = () => {
   return (
     <div className="max-w-[1120px] mx-auto mt-24 ">
-      <NavbarComponent />
+      <Navbar />
       <CardsContainer />
     </div>
   );

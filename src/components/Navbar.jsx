@@ -1,10 +1,10 @@
 import GithubIcon from '../assets/githubLogo.svg';
 
-const NavbarComponent = () => {
+const Navbar = () => {
   return (
     <section className="flex marker:w-full h-[70px] flex-row justify-between items-center">
       <div>
-        <h1 className="font-extrabold text-4xl">Pomodoro</h1>
+        <h1 className="font-extrabold text-4xl text-[#E4E4E7]">Pomodoro</h1>
         <h2 className="xl:text-xl text-[#A1A1AA]">
           ¡Gestiona tu tiempo de forma efectiva!
         </h2>
@@ -37,4 +37,4 @@ const NavbarComponent = () => {
   );
 };
 
-export default NavbarComponent;
+export default Navbar;
