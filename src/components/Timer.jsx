@@ -9,6 +9,9 @@ const Timer = ({ duration, handleShowMessage, session }) => {
   const [isPaused, setIsPaused] = useState(false)
   const dispatch = useDispatch()
 
+  const sound = new Audio('/sound.wav');
+
+
   useEffect(()=>{
       if(session === 'Final') {
         dispatch(resetSessions());
@@ -21,6 +24,7 @@ const Timer = ({ duration, handleShowMessage, session }) => {
       setTimeLeft((prev) => {
         if (prev <= 0) {
           clearInterval(interval);
+          sound.play();
           setTimeout(() => handleShowMessage(), 0);  
           return 0;
         }

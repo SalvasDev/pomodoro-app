@@ -38,13 +38,13 @@ const AddTasks = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="flex flex-row gap-4 w-full h-10 justify-between max-w-150 items-center mt-6">
+      <form onSubmit={handleSubmit} className="flex flex-row gap-2 w-full h-10 justify-between max-w-150 items-center mt-6">
         <input
           name='description'
           placeholder="Nueva tarea"
           onChange={handleChange}
           value={task.description}
-          className="w-10/12 h-full rounded-lg p-4 placeholder:text-[#52525B]"
+          className="w-10/12 h-full rounded-lg p-4 bg-[#212123] placeholder:text-[#9d9dac]"
         />
         <button
           type="submit"
