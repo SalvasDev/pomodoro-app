@@ -29,7 +29,7 @@ const Timer = ({ duration, handleShowMessage, session }) => {
       if (remainingTime <= 0) {
         clearInterval(interval);
         sound.play();
-        setTimeout(() => handleShowMessage(), 0);
+        handleShowMessage();
         setTimeLeft(0);
       } else {
         setTimeLeft(remainingTime);

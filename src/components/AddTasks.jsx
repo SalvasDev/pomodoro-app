@@ -5,12 +5,9 @@ import { v4 as uuid  } from "uuid";
 
 const AddTasks = () => {
 
- const dispatch =  useDispatch(addTask);
-
+  const dispatch =  useDispatch(addTask);
   const [task, setTask] = useState({description: ''});
-
   const [error, setError] = useState(false)
-
 
   const handleChange = (e) => {
       setTask({
@@ -18,7 +15,6 @@ const AddTasks = () => {
         [e.target.name]: e.target.value
       })
     }
-
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -32,7 +28,7 @@ const AddTasks = () => {
       setTask({ description: '' });  
       setError(false);
     } else {
-        setError(true);
+      setError(true);
     }
   }
 

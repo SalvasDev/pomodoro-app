@@ -10,8 +10,12 @@ const SessionDetails = () => {
   const session = sessions[currentSessionIndex];
   const nextSession = sessions[currentSessionIndex + 1];
   const dispatch = useDispatch();
-  
+
   const [showMessage, setShowMessage] = useState(false);
+  
+  const isActiveTagCurrentMode = session.sessionNumber >= 1 ? 'flex flex-row' : 'hidden';
+  const isActiveTagNextMode =  session.mode !== 'Pausa Larga' ? 'flex flex-row' : 'hidden';
+  const isActiveButtonReset = session.sessionNumber >= 1 ? 'block' : 'hidden';
 
   const handleShowMessage = () => {
     setShowMessage(true);  
@@ -42,25 +46,19 @@ const SessionDetails = () => {
       </article>
 
       <div className="w-full h-[1px] bg-[#71717A] mt-6"></div>
+  
+      <article className={`${isActiveTagCurrentMode} w-full mt-6 justify-between items-center`}>
+        <h4 className="font-semibold text-lg">Modo actual:</h4>
+        <Tag label={session.mode} />
+      </article>
 
-      {     
-        session.sessionNumber >= 1 &&
-          <article className="w-full mt-6 flex flex-row justify-between items-center">
-            <h4 className="font-semibold text-lg">Modo actual:</h4>
-            <Tag label={session.mode} />
-          </article>
-      }
+      <article className={`${isActiveTagNextMode} w-full mt-6 justify-between items-center`}>
+        <h4 className="font-semibold text-lg">Próximo modo:</h4>
+        <Tag label={ nextSession.mode} />
+      </article>      
 
-      {
-        session.mode !== 'Pausa Larga' && (
-          <article className="w-full mt-6 flex flex-row justify-between items-center">
-            <h4 className="font-semibold text-lg">Próximo modo:</h4>
-            <Tag label={ nextSession.mode} />
-          </article>      
-        )
-      }
 
-      <div className='flex flex-col flex-grow items-center justify-center self-center'>
+      <div className='flex flex-grow items-center justify-center self-center'>
         { 
           session.startTimer && !showMessage &&
             <Timer 
@@ -94,15 +92,13 @@ const SessionDetails = () => {
             />
         }
     </div>
+  
+    <button 
+      onClick={handleResetSessions} 
+      className={`${isActiveButtonReset} mt-4 w-full h-12 self-end rounded-lg bg-gray-800 hover:bg-[#f59e0b] text-[#ffffff]   active:bg-[#b37600] text-xl font-semibold`}>
+        Reiniciar Sesiones
+    </button>
 
-    {
-      session.sessionNumber >= 1 &&
-        <button 
-          onClick={handleResetSessions} 
-          className="mt-4 w-full h-12 self-end rounded-lg bg-gray-800 hover:bg-[#f59e0b] text-[#ffffff]   active:bg-[#b37600] text-xl font-semibold">
-          Reiniciar Sesiones
-        </button>
-    }
     </section>
   );
 };
