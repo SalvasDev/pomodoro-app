@@ -75,4 +75,3 @@ export const pomodoroData = {
     ]
 }
 
-// { isPaused ? 'play_arrow' : 'pause_circle' }
