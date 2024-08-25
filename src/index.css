@@ -27,22 +27,24 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  text-decoration: inherit;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
+  padding: 0;
   display: flex;
   min-width: 320px;
   min-height: 100vh;
   color: #a1a1aa;
 }
 
-/* :root {
-  color: #000000;
-  background-color: #ffffff;
-} */
+a {
+  text-decoration: inherit;
+}
 
 .color-icon {
   filter: brightness(0) saturate(100%) invert(47%) sepia(5%) saturate(504%)

@@ -69,8 +69,8 @@ const SessionDetails = () => {
               session = {session.mode}
             />
         }
-
-        { 
+        
+        {
           showMessage && 
             <CicleMessage 
               title='¡Felicidades!'

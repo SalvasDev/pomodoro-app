@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 
 const HomePage = () => {
   return (
-    <div className="max-w-[1120px] mx-auto mt-1 lg:mt-16">
+    <div className="max-w-[1120px] mx-auto mt-[-16px] lg:mt-16 pb-8">
       <Navbar />
       <CardsContainer />
     </div>

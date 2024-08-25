@@ -8,7 +8,7 @@ const CicleMessage = ({ title, typeMessage, message, nextSession, onSessionEnd, 
   return (
     <div className={`flex flex-col mt-10 mb-10 justify-center items-center ${widthCustom}`}>
       <div className="flex flex-row">
-        <h2 className="font-bold text-5xl text-white">{title}</h2>
+        <h2 className="font-bold text-4xl lg:text-5xl text-white">{title}</h2>
         <span className="material-symbols-rounded text-5xl text-[#f59e0b]">
           { typeMessage === 'end' ? 'celebration' : 'rocket_launch'}
         </span>
