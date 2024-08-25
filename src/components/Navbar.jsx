@@ -28,7 +28,7 @@ const Navbar = () => {
           type="button"
           className="bg-gray-800 w-8 h-8 rounded flex justify-center items-center"
         >
-          <span className="material-symbols-rounded text-[#71717A] text-base ">
+          <span className="material-symbols-rounded text-[#71717A] text-base">
             translate
           </span>
         </button>

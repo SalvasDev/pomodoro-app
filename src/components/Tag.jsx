@@ -4,9 +4,9 @@ import coffeeCupOrange from '../assets/coffee-orange.svg';
 
 const Tag = ({ label }) => {
   const tagColor =
-    label === 'Enfoque'
+    label === 'Foco'
       ? 'text-[#84cc16] border-[#84cc16] bg-[#8dd42120]'
-      : label === 'Pausa corta'
+      : label === 'Pausa Corta'
       ? 'text-[#f59e0b] border-[#f59e0b] bg-[#f59e0b20]'
       : 'text-[#06b6d4] border-[#06b6d4] bg-[#06b6d420]';
 
@@ -16,9 +16,9 @@ const Tag = ({ label }) => {
     >
       <img
         src={
-          label === 'Enfoque'
+          label === 'Foco'
             ? brain
-            : label === 'Pausa corta'
+            : label === 'Pausa Corta'
             ? coffeeCupOrange
             : coffeeCupBlue
         }
