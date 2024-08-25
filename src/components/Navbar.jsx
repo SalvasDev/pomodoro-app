@@ -14,7 +14,7 @@ const Navbar = () => {
           type="button"
           className="bg-gray-800 w-8 h-8 rounded flex justify-center items-center"
         >
-        <a href='https://github.com/SalvasDev'><img src={GithubIcon} alt="GitHub" className="w-5 h-5 color-icon" /></a>  
+        <a href='https://github.com/SalvasDev/pomodoro-app' target='_blank'><img src={GithubIcon} alt="GitHub" className="w-5 h-5 color-icon" /></a>  
         </button>
       </div>
     </section>
