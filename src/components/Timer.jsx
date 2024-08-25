@@ -8,6 +8,7 @@ const Timer = ({ duration, handleShowMessage, session }) => {
   const [progress, setProgress] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [startTime, setStartTime] = useState(Date.now());
+  const [elapsedTime, setElapsedTime] = useState(0);   
   const dispatch = useDispatch();
 
   const sound = new Audio('/sound.wav');
@@ -23,8 +24,8 @@ const Timer = ({ duration, handleShowMessage, session }) => {
 
     const interval = setInterval(() => {
       const now = Date.now();
-      const elapsedTime = Math.floor((now - startTime) / 1000);
-      const remainingTime = duration - elapsedTime;
+      const totalElapsedTime = elapsedTime + Math.floor((now - startTime) / 1000);
+      const remainingTime = duration - totalElapsedTime;
 
       if (remainingTime <= 0) {
         clearInterval(interval);
@@ -37,7 +38,7 @@ const Timer = ({ duration, handleShowMessage, session }) => {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [isPaused, startTime, duration, handleShowMessage]);
+  }, [isPaused, startTime, elapsedTime, duration, handleShowMessage]);
 
   useEffect(() => {
     setProgress(((duration - timeLeft) / duration) * 100);
@@ -46,7 +47,7 @@ const Timer = ({ duration, handleShowMessage, session }) => {
   const togglePause = () => {
     setIsPaused((prev) => !prev);
     if (!isPaused) {
-      setStartTime(Date.now() - (duration - timeLeft) * 1000);
+      setElapsedTime((prev) => prev + Math.floor((Date.now() - startTime) / 1000));
     } else {
       setStartTime(Date.now());
     }
@@ -56,6 +57,7 @@ const Timer = ({ duration, handleShowMessage, session }) => {
     setProgress(0);
     setTimeLeft(duration);
     setStartTime(Date.now());
+    setElapsedTime(0);   
   };
 
   return (
