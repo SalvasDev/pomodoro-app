@@ -3,7 +3,7 @@ const CicleMessage = ({ title, typeMessage, message, nextSession, onSessionEnd, 
   
   const baseColor = nextSession === 'Foco' || 'End' ? 'bg-[#5f9f00]' : nextSession === 'Pausa Corta' ? 'bg-[#f59e0b]' : 'bg-[#06b6d4]';
   const hoverColor = nextSession === 'Foco' || 'End' ? 'hover:bg-[#518600]' : nextSession === 'Pausa Corta' ? 'hover:bg-[#c6881e]' : 'hover:bg-[#05a3be]';
-  const widthCustom = typeMessage === 'begin' ? 'w-[85%]' : '';
+  const widthCustom = typeMessage === 'begin' ? 'w-[70%]' : 'w-[90%]';
 
   return (
     <div className={`flex flex-col mt-10 mb-10 justify-center items-center ${widthCustom}`}>

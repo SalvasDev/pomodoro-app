@@ -64,7 +64,7 @@ const SessionDetails = () => {
         { 
           session.startTimer && !showMessage &&
             <Timer 
-              duration={session.time * 1}   
+              duration={session.time * 60}   
               handleShowMessage={handleShowMessage}  
               session = {session.mode}
             />
